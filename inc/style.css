@@ -1,0 +1,46 @@
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.article {
+    position: relative;
+}
+
+.page {
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 28px;
+}
+
+.article.bookmarked i {
+    color: blue;
+}
+
+.article i {
+    position: absolute;
+    left: 31%;
+    top: 38%;
+    font-size: 59px;
+    color: white;
+    cursor: pointer;
+}
+
+#bookmark-holder {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    border-top: lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: inset 0px 0px 10px black;
+}
+
+#bookmark-holder i {
+    color: red;
+}

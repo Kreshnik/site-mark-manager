@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SiteMark Manager</title>
+
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="inc/style.css">
+
+</head>
+<body>
+<h1>SiteMark Manager Demo</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3 article"
+                 data-bookmark-item='{"id":5,"title":"GitHub","url":"http://www.facebook.com","image":"http://fpoimg.com/200x200"}'>
+                <i class="glyphicon glyphicon-bookmark"></i>
+                <img src="http://fpoimg.com/200x200" class="img-thumbnail">
+            </div>
+            <div class="col-md-3 article"
+                 data-bookmark-item='{"id":6,"title":"Ninxha!","url":"http://www.slack.com","image":"http://lorempixel.com/200/200/"}'>
+                <i class="glyphicon glyphicon-bookmark"></i>
+                <img src="http://lorempixel.com/200/200/" class="img-thumbnail">
+            </div>
+        </div>
+        <a href="index.html" class="page">Go back xD.</a>
+    </div>
+    <div id="bookmark-holder">
+
+    </div>
+</div>
+
+<script src="//code.jquery.com/jquery.js"></script>
+<script src="jquery.siteMarkManager.js"></script>
+
+<script type="text/javascript">
+    $('[data-bookmark-item]').SiteMarkManager();
+</script>
+</body>
+</html>
