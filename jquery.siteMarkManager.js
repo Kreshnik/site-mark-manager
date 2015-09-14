@@ -5,6 +5,7 @@
         bookmarkClass: 'bookmarked',
         removeBookMarkClass: 'remove-page-mark',
         dataField: 'bookmark-item',
+        itemTemplate: '<div class="col-md-3 article"><i {REMOVE_DATA_ATTRIBUTE}  class="glyphicon glyphicon-remove-circle {REMOVE_BOOKMARK_CLASS}"></i><a title="{TITLE}" target="_blank" href="{URL}"><img src="{IMAGE}" class="img-thumbnail"/></a></div>',
         addBookMarkCallback: function () {
             console.log('Added!');
         },
@@ -101,10 +102,12 @@
             });
         },
         renderItem: function (element, data) {
-            return '<div class="col-md-3 article">' +
-                '<i data-' + this.options.dataField + '-remove=\'' + data + '\'  class="glyphicon glyphicon-remove-circle ' + this.options.removeBookMarkClass + '"></i>' +
-                '<a title="' + element.title + '" target="_blank" href="' + element.url + '"><img src="' + element.image + '" class="img-thumbnail"/></a>' +
-                '</div>';
+            var item = this.options.itemTemplate.replace('{REMOVE_DATA_ATTRIBUTE}', 'data-' + this.options.dataField + '-remove=\'' + data + "'")
+                .replace('{REMOVE_BOOKMARK_CLASS}', this.options.removeBookMarkClass)
+                .replace('{TITLE}', element.title)
+                .replace('{URL}', element.url)
+                .replace('{IMAGE}', element.image);
+            return item;
         },
         isBookmarked: function () {
             var obj = this.$element.data(this.options.dataField);

@@ -46,7 +46,9 @@
 <script src="jquery.siteMarkManager.js"></script>
 
 <script type="text/javascript">
-    $('[data-bookmark-item]').SiteMarkManager();
+    $('[data-bookmark-item]').SiteMarkManager({
+        itemTemplate: '<div class="col-md-3 article"><i {REMOVE_DATA_ATTRIBUTE}  class="glyphicon glyphicon-remove-circle {REMOVE_BOOKMARK_CLASS}"></i><a title="{TITLE}" target="_blank" href="{URL}"><img src="{IMAGE}" class="img-thumbnail"/></a></div>'
+    });
 </script>
 </body>
 </html>
